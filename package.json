@@ -1,14 +1,11 @@
 {
-  "name": "portfolio",
+  "name": "vite-deploy",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://jakubkloc.github.io/jakubkloc.github.io/",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "tailwind": "npx tailwindcss -i ./src/input.css -o ./public/output.css --watch",
@@ -35,7 +32,6 @@
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.0",
     "eslint-plugin-react": "^7.32.2",
-    "gh-pages": "^6.0.0",
     "postcss": "^8.4.28",
     "prettier": "^3.0.2",
     "prettier-plugin-tailwindcss": "^0.5.3",
