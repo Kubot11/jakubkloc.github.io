@@ -1,0 +1,401 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* :root {
+    --color: red;
+    cursor: url(./assets/cursor-link-custom.png) !important;
+  } */
+
+  /* html {
+    cursor: url(./assets/cursor-custom.png) !important;
+  } */
+  a {
+    @apply cursor-custom-link;
+  }
+  img {
+    pointer-events: none;
+  }
+  /* body {
+    cursor: url(./assets/cursor-custom.png) !important;
+  } */
+}
+
+/* CAROUSEL POSITION */
+.carusel-position {
+  position: absolute;
+  top: 49px;
+  left: 0;
+  /* cursor: url(./assets/cursor-custom.png) !important; */
+  animation: fade-in 1s ease-in-out forwards;
+  /* overflow-x: hidden; */
+}
+
+/* CONTACT MENU */
+.bigger-icon-hover:hover > img {
+  margin-left: 12px;
+  width: 50px;
+  height: 50px;
+}
+
+/* GREEN CORNERS FRAME */
+.frame {
+  --thickness: 4px;
+  --corners-size: 40px;
+  --corners-offsets: 5%;
+
+  background:
+    linear-gradient(to right, var(--color) var(--thickness), transparent 0) 0 0,
+    linear-gradient(to left, var(--color) var(--thickness), transparent 0) 100%
+      100%,
+    linear-gradient(to bottom, var(--color) var(--thickness), transparent 0) 0 0,
+    linear-gradient(to top, var(--color) var(--thickness), transparent 0) 100%
+      100%;
+  background-repeat: no-repeat;
+  background-size: var(--corners-size) var(--corners-size);
+
+  max-width: fit-content;
+  transition: background 0.4s;
+}
+
+.frame:hover {
+  background:
+    linear-gradient(to right, var(--color) var(--thickness), transparent 0)
+      var(--corners-offsets) var(--corners-offsets),
+    linear-gradient(to left, var(--color) var(--thickness), transparent 0)
+      calc(100% - var(--corners-offsets)) calc(100% - var(--corners-offsets)),
+    linear-gradient(to bottom, var(--color) var(--thickness), transparent 0)
+      var(--corners-offsets) var(--corners-offsets),
+    linear-gradient(to top, var(--color) var(--thickness), transparent 0)
+      calc(100% - var(--corners-offsets)) calc(100% - var(--corners-offsets));
+  background-repeat: no-repeat;
+  background-size: calc(var(--corners-size) - 15px)
+    calc(var(--corners-size) - 15px);
+}
+
+.frame-content {
+  border: solid white 2px;
+  margin: 25px;
+  /* display: inline-block; */
+}
+
+/* PROJECTS DESCRIPTIONS */
+.text-overlay {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  right: 0;
+  background-color: rgba(20, 22, 22, 0.95);
+  color: white;
+  height: 0;
+  overflow: hidden;
+  transition: height 0.3s ease-in-out;
+  white-space: normal;
+}
+
+.project-container:hover .text-overlay {
+  height: 148px;
+  border: solid white 2px;
+  display: inline-block;
+}
+
+@media (min-width: 640px) {
+  @media not all and (min-width: 1024px) {
+    .project-container:hover .text-overlay {
+      height: 100px;
+    }
+  }
+}
+
+.project-container {
+  position: relative;
+}
+
+/* TOOLTIPS */
+.tooltip:before {
+  content: attr(data-text);
+  position: absolute;
+
+  /* vertically center */
+  top: 50%;
+  transform: translateY(-50%);
+
+  /* move to right */
+  left: 100%;
+  margin-left: 15px;
+
+  /* basic styles */
+  padding: 16px;
+  border: solid 2px white;
+  background: #000;
+  color: #fff;
+  text-align: justify;
+  border-radius: 5px;
+  font-size: medium;
+  z-index: 10;
+
+  /* animating */
+  opacity: 0;
+  transition: 0.3s opacity;
+  pointer-events: none;
+}
+
+@media (min-width: 640px) {
+  @media not all and (min-width: 1024px) {
+    .tooltip:before {
+      font-size: small;
+      padding: 3px;
+    }
+  }
+}
+.tooltip {
+  position: relative; /* making the .tooltip span a container for the tooltip text */
+}
+
+.tooltip:after {
+  content: "";
+  position: absolute;
+
+  /* position tooltip correctly */
+  left: 100%;
+  margin-left: -24px;
+
+  /* vertically center */
+  top: 50%;
+  transform: translateY(-50%);
+
+  /* the arrow */
+  border: 20px solid #000;
+  border-color: transparent white transparent transparent;
+
+  /* animating */
+  opacity: 0;
+  transition: 0.3s;
+  pointer-events: none;
+}
+.tooltip:hover:before,
+.tooltip:hover:after {
+  display: block;
+  opacity: 1;
+}
+
+/* TOOLTIP LEFT */
+.tooltip-left:after {
+  left: 9px;
+  border-color: transparent transparent transparent white;
+}
+
+.tooltip-left:before {
+  left: initial;
+  margin: initial;
+
+  margin-right: 15px;
+  right: 100%;
+}
+
+/* TABLE */
+
+/* .ag-header-icon,
+.ag-header-cell-menu-button,
+.ag-header-icon,
+.ag-header-label-icon,
+.ag-filter-icon,
+.ag-header-icon,
+.ag-header-label-icon,
+.ag-sort-order,
+.ag-header-icon,
+.ag-header-label-icon,
+.ag-sort-ascending-icon,
+.ag-header-icon,
+.ag-header-label-icon,
+.ag-sort-descending-icon,
+.ag-header-icon,
+.ag-header-label-icon,
+.ag-sort-none-icon {
+  cursor: help;
+} */
+/* form {
+  cursor:help;
+}
+.ag-theme-alpine-dark {
+  cursor:help;
+}
+
+.table-custom-cursor {
+  cursor: help ;
+}
+
+.ag-header-cell-filtered {
+  cursor: help ;
+}
+
+.ag-header {
+  cursor: help ;
+} */
+
+/* .ag-cell-label-container   {
+  background-color: red;
+  cursor:help;
+} */
+/* 
+ag-cell-label-container */
+/* .ag-header-cell-sorted-desc,.ag-header-cell-sorted-none,.ag-header-cell-sorted-asc{
+cursor:help;
+}
+.ag-header-cell-label {
+  cursor: help;
+}
+.ag-cell-label-container {
+  cursor: help;
+}
+.ag-menu,
+.ag-ltr,
+.ag-popup {
+  cursor: help;
+}
+
+.ag-filter {
+  cursor: help;
+} */
+
+/* ANIMATION CLASSES */
+
+@keyframes navbar {
+  0% {
+    top: -48px;
+  }
+  100% {
+    top: 0;
+  }
+}
+
+.navbar-animation {
+  animation: navbar 0.5s ease-in-out 1s forwards;
+}
+
+@keyframes footer {
+  0% {
+    height: 0px;
+    border-top-width: 0px;
+  }
+  100% {
+    height: 16px;
+    border-top-width: 2px;
+  }
+}
+
+.footer-animation {
+  animation: footer 0.5s ease-in-out 1s forwards;
+}
+
+@keyframes contact-icons {
+  0% {
+    left: -26px;
+  }
+  100% {
+    left: 10px;
+  }
+}
+
+.contact-icons-animation {
+  animation: contact-icons 0.5s ease-in-out 1s forwards;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.next-btn-animation {
+  animation: fade-in 1s ease-in-out forwards;
+}
+
+.button-container:hover > .next-button {
+  left: 40px;
+  transform: scale(1.1) rotate(-45deg);
+  transition:
+    left 300ms ease-in-out,
+    transform 300ms ease-in-out;
+}
+
+.next-button {
+  transform: rotate(-45deg);
+  transition:
+    left 300ms ease-in-out,
+    transform 300ms ease-in-out;
+}
+
+.button-container:hover > .next-button-right {
+  left: -20px;
+  transform: scale(1.1) rotate(-45deg);
+  transition:
+    left 300ms ease-in-out,
+    transform 300ms ease-in-out;
+}
+
+.next-button-right {
+  transform: rotate(-45deg);
+  transition:
+    left 300ms ease-in-out,
+    transform 300ms ease-in-out;
+}
+
+.button-container {
+}
+
+.table-container * {
+  @apply cursor-custom;
+}
+
+.ag-header-cell-sortable .ag-header-cell-label {
+  @apply cursor-custom;
+}
+
+.ag-root ::-webkit-scrollbar {
+  @apply cursor-custom;
+  height: 5px;
+}
+.ag-root ::-webkit-scrollbar-track {
+  background: #141616;
+}
+
+/* Handle */
+.ag-root ::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+.ag-root ::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+::-webkit-scrollbar {
+  /* @apply cursor-custom; */
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  /* background: #f1f1f1; */
+  background: #141616;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.carusel-position .rec-slider-container {
+  margin: 0;
+}
