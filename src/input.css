@@ -348,9 +348,6 @@ cursor:help;
     transform 300ms ease-in-out;
 }
 
-.button-container {
-}
-
 .table-container * {
   @apply cursor-custom;
 }
