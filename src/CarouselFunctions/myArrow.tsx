@@ -11,7 +11,7 @@ export default function myArrow({
   type,
   onClick,
   isEdge,
-}: MyArrowProps) : JSX.Element {
+}: MyArrowProps): JSX.Element {
   if (window.innerWidth < 640) {
     return <></>;
   }
