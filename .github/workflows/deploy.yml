@@ -9,6 +9,8 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
+    env:
+      ACTIONS_NODE_DEFAULT_VERSION: 16 # Set node version to 16 for all actions
 
     steps:
       - name: Checkout repo
@@ -31,17 +33,22 @@ jobs:
           name: production-files
           path: ./dist
 
+      - name: Save artifact name to environment file
+        run: echo "ARTIFACT_NAME=production-files" >> $GITHUB_ENV # Use environment file to pass data between steps
+
   deploy:
     name: Deploy
     needs: build
     runs-on: ubuntu-latest
+    env:
+      ACTIONS_NODE_DEFAULT_VERSION: 16 # Set node version to 16 for all actions
     if: github.ref == 'refs/heads/main'
 
     steps:
       - name: Download artifact
         uses: actions/download-artifact@v2.1.0
         with:
-          name: production-files
+          name: ${{ env.ARTIFACT_NAME }} # Use environment variable to get artifact name
           path: ./dist
 
       - name: Deploy to GitHub Pages
