@@ -1,3 +1,4 @@
+import React from "react";
 import NextBtn from "../components/NextBtn";
 import { consts } from "@itseasy21/react-elastic-carousel";
 
