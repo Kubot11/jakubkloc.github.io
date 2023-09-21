@@ -6,16 +6,27 @@ import iconProjects from "../assets/icon-projects.svg";
 import iconTechStack from "../assets/icon-tech-stack.svg";
 import iconKnoledgeBase from "../assets/icon-knowledge-base.svg";
 import iconCV from "../assets/icon-CV.svg";
+import { isMobile } from "react-device-detect";
+
+import { ActiveIndexContext } from "../helpers/ActiveIndexContext";
 
 interface NavbarProps {
   goTo: (index: number) => void;
   setStart: (value: boolean) => void;
   setLoadingBarFinished: (value: boolean) => void;
 }
-export default class Navbar extends React.Component<NavbarProps> {
-  state = {
-    isMobile: window.innerWidth < 640,
-  };
+
+interface NavbarState {
+  smallScreen: boolean;
+}
+
+export default class Navbar extends React.Component<NavbarProps, NavbarState> {
+  constructor(props: NavbarProps) {
+    super(props);
+    this.state = {
+      smallScreen: window.innerWidth < 640,
+    };
+  }
 
   componentDidMount() {
     window.addEventListener("resize", this.handleResize);
@@ -26,69 +37,114 @@ export default class Navbar extends React.Component<NavbarProps> {
   }
 
   handleResize = () => {
-    const isMobile = window.innerWidth < 640;
-    if (isMobile !== this.state.isMobile) {
-      this.setState({ isMobile });
+    const smallScreen = window.innerWidth < 640;
+    if (smallScreen !== this.state.smallScreen) {
+      this.setState({ smallScreen });
     }
   };
 
   render(): JSX.Element {
     const { goTo, setStart, setLoadingBarFinished } = this.props;
-    const { isMobile } = this.state;
+    const { smallScreen } = this.state;
     return (
-      <nav className="navbar-animation border-color-custom-bars-highlines absolute left-0  top-[-48px] z-10 flex h-12 w-full min-w-max items-center justify-evenly overflow-x-hidden border-b bg-[var(--color)]">
-        {/* <div className="mx-auto text-custom-font">Jakub Kloc</div> */}
-        {/* <div className=" flex  justify-around lg:gap-x-24 sm:gap-x-12 "> */}
-        <a
-          onClick={() => {
-            setStart(false);
-            setLoadingBarFinished(false);
-          }}
-          className="  cursor-custom-action text-custom-font hover:opacity-75"
-        >
-          {isMobile ? <img className="w-7" src={iconStart} /> : "START"}
-        </a>
-        <a
-          onClick={() => {
-            goTo(0);
-          }}
-          className="cursor-custom-action text-custom-font hover:opacity-75"
-        >
-          {isMobile ? <img className="w-7" src={iconAboutMe} /> : "O MNIE"}
-        </a>
-        <a
-          onClick={() => {
-            goTo(1);
-          }}
-          className="cursor-custom-action text-custom-font hover:opacity-75"
-        >
-          {isMobile ? <img className="w-7" src={iconProjects} /> : "PROJEKTY"}
-        </a>
-        <a
-          onClick={() => {
-            goTo(2);
-          }}
-          className="cursor-custom-action text-custom-font hover:opacity-75"
-        >
-          {isMobile ? <img src={iconTechStack} /> : " TECHNOLOGIE"}
-        </a>
-        <a
-          onClick={() => {
-            goTo(3);
-          }}
-          className="cursor-custom-action text-custom-font hover:opacity-75"
-        >
-          {isMobile ? (
-            <img className="w-7" src={iconKnoledgeBase} />
-          ) : (
-            "BAZA WIEDZY"
-          )}
-        </a>
-        <a className="text-custom-font hover:opacity-75">
-          {isMobile ? <img className="w-7" src={iconCV} /> : "POBIERZ CV"}
-        </a>
-        {/* </div> */}
-      </nav>
+      <ActiveIndexContext.Consumer>
+        {({ activeIndex, setActiveIndex }) => (
+          <nav className="navbar-animation border-color-custom-bars-highlines absolute left-0 top-[-48px]  z-10  flex h-12 w-full min-w-max items-center justify-evenly overflow-x-hidden border-b bg-[var(--color)]">
+            {/* START */}
+            <a
+              onClick={() => {
+                setStart(false);
+                setLoadingBarFinished(false);
+                setActiveIndex(0);
+              }}
+              className="cursor-custom-action  p-1.5 text-custom-font hover:opacity-75"
+            >
+              {smallScreen ? <img className="w-7 " src={iconStart} /> : "START"}
+            </a>
+
+            {/* ABOUT ME */}
+            <a
+              onClick={() => {
+                goTo(0);
+                setActiveIndex(0);
+              }}
+              className={`cursor-custom-action text-custom-font hover:opacity-75 ${
+                activeIndex == 0 && isMobile
+                  ? "rounded-full bg-white p-1.5"
+                  : ""
+              }`}
+            >
+              {smallScreen ? (
+                <img className="w-7" src={iconAboutMe} />
+              ) : (
+                "O MNIE"
+              )}
+            </a>
+
+            {/* PROJECTS */}
+            <a
+              onClick={() => {
+                goTo(1);
+                setActiveIndex(1);
+              }}
+              className={`cursor-custom-action text-custom-font hover:opacity-75 ${
+                activeIndex == 1 && isMobile
+                  ? "rounded-full bg-white p-1.5"
+                  : ""
+              }`}
+            >
+              {smallScreen ? (
+                <img className="w-7" src={iconProjects} />
+              ) : (
+                "PROJEKTY"
+              )}
+            </a>
+
+            {/* TECH STACK */}
+            <a
+              onClick={() => {
+                goTo(2);
+                setActiveIndex(2);
+              }}
+              className={`cursor-custom-action text-custom-font hover:opacity-75 ${
+                activeIndex == 2 && isMobile
+                  ? "rounded-full bg-white p-1.5"
+                  : ""
+              }`}
+            >
+              {smallScreen ? <img src={iconTechStack} /> : " TECHNOLOGIE"}
+            </a>
+
+            {/* KNOWLEDGE BASE */}
+            <a
+              onClick={() => {
+                goTo(3);
+                setActiveIndex(3);
+              }}
+              className={`cursor-custom-action text-custom-font hover:opacity-75 ${
+                activeIndex == 3 && isMobile
+                  ? "rounded-full bg-white p-1.5"
+                  : ""
+              }`}
+            >
+              {smallScreen ? (
+                <img className="w-7" src={iconKnoledgeBase} />
+              ) : (
+                "BAZA WIEDZY"
+              )}
+            </a>
+
+            {/* DOWNLOAD CV */}
+            <a className="text-custom-font hover:opacity-75">
+              {smallScreen ? (
+                <img className="w-7" src={iconCV} />
+              ) : (
+                "POBIERZ CV"
+              )}
+            </a>
+          </nav>
+        )}
+      </ActiveIndexContext.Consumer>
     );
   }
 }

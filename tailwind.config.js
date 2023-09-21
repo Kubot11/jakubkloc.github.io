@@ -4,7 +4,6 @@ export default {
   theme: {
     extend: {
       screens: {
-        zero: "0px",
       },
       scale: {
         "h-flip": "-1",
@@ -21,16 +20,17 @@ export default {
         3: "3px",
       },
       keyframes: {
-        "loading-bar": {
+        "loading-bar-light": {
+          "0%": { "background-color": "var(--color)", width: "0%" },
+          "50%": { "background-color": "var(--color)" },
+          "100%": { "background-color": "var(--color)", width: "100%" },
+        },
+        "loading-bar-dark": {
           "0%": { "background-color": "#A6A6A6", width: "0%" },
           "50%": { "background-color": "#FFFFFF" },
           "100%": { "background-color": "var(--color)", width: "100%" },
         },
-        blinking: {
-          "0%": { "background-color": "#A6A6A6" },
-          "50%": { "background-color": "#FFFFFF" },
-          "100%": { "background-color": "var(--color)" },
-        },
+
         fadeing: {
           "75%": { opacity: "0.95" },
           "90%": { opacity: "0.70" },
@@ -47,8 +47,10 @@ export default {
       },
 
       animation: {
-        "loading-bar":
-          "blinking 2500ms forwards, fulling 3s ease-in-out forwards",
+        "loading-bar-light":
+          "loading-bar-light 2500ms forwards, fulling 3s ease-in-out forwards",
+        "loading-bar-dark":
+          "loading-bar-dark 2500ms forwards, fulling 3s ease-in-out forwards",
         "loading-bar-container": "fadeing 3.5s ease-in-out forwards",
         brightening: "brightening 1s ease-in-out forwards",
       },

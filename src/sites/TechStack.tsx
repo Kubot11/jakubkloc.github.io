@@ -12,11 +12,49 @@ import vite from "../assets/vite-logo.png";
 import npm from "../assets/npm-logo.png";
 import vscode from "../assets/vscode-logo.png";
 import github from "../assets/github-logo.png";
+import NextBtn from "../components/NextBtn";
+import { ActiveIndexContext } from "../helpers/ActiveIndexContext";
+import { isMobile } from "react-device-detect";
+interface TechStackProps {
+  goTo: (index: number) => void;
+}
 
-export default class TechStack extends React.Component {
+interface TechStackState {
+  isScrolled: boolean;
+}
+
+export default class TechStack extends React.Component<
+  TechStackProps,
+  TechStackState
+> {
+  constructor(props: TechStackProps) {
+    super(props);
+    this.state = {
+      isScrolled: false,
+    };
+  }
+
+  componentDidMount() {
+    const container = document.getElementById("techStack")?.parentElement;
+
+    if (container) {
+      container.addEventListener("scroll", () => {
+        if (
+          container.scrollTop + container.clientHeight >=
+          container.scrollHeight - 30
+        ) {
+          this.setState({ isScrolled: true });
+        }
+      });
+    }
+  }
   render(): JSX.Element {
+    const { goTo } = this.props;
     return (
-      <div className=" flex h-full  w-full flex-col items-center  gap-4 sm:px-8 lg:px-20">
+      <div
+        id="techStack"
+        className=" flex h-full  w-full flex-col items-center  gap-4 sm:px-8 lg:px-20"
+      >
         <h1
           className="
          grow
@@ -32,46 +70,62 @@ export default class TechStack extends React.Component {
         </h1>
         <div className="mx-6 sm:mx-0">
           <Frame cornersOffsets={"12px"}>
-            <p className="frame-content p-4 text-base">
-              Po najechaniu na logo zostanie wyświetlony opis mojej znajomości
-              danej technologii/narzędzia{" "}
-            </p>
+            {!isMobile && (
+              <p className="frame-content p-4 text-base">
+                Po najechaniu na logo zostanie wyświetlony opis mojej znajomości
+                danej technologii/narzędzia{" "}
+              </p>
+            )}
           </Frame>
         </div>
 
-        <div className="flex flex-wrap justify-center  gap-16 pb-8 sm:gap-8 sm:pb-0">
+        <div className="faster-wrap content-container   mt-12 flex flex-wrap justify-center  gap-16 pb-8 sm:gap-8 sm:pb-0   lg:mt-24 lg:max-w-[1300px] xl:gap-x-24">
           <IconsContainer
             image1={html}
             image2={css}
-            tooltipText1="qwewqewqeqweqwewq "
-            tooltipText2="sadasdasdassdfsd fsdfsdsdfsdfsdfsdfsdf sdfsdfsdfsdfsd dsf sdf sd fsd fsd"
+            tooltipText1="podstawowe elementy, elementy semantyczne, aria-label i atrybut alt, formularze, znaki specjalne, elementy meta, id, class, atrubuty zdarzeń, tabindex, style, script defer"
+            tooltipText2="podstawowe i zawansowane właściwości, box model,  display, specyficzność, !important, zapytania media, jednostki, selektory, pseudoklasy i pseudoelementy, z-index, pozycjonowanie, animacje, zmienne, calc(), flexbox, grid, hsla(), rgba()"
           />
           <IconsContainer
             image1={javascript}
             image2={typescript}
-            tooltipText1=""
-            tooltipText2=""
+            tooltipText1="znajomość składni, pętla zdarzeń, asynchroniczność, promisy, this, ternary operator, destrukturyzacja, zakres zmiennych, obsługa błędów, dynamiczne importowanie, manipulacja DOM, metody window, delegacja zdarzeń, formularze, Fetch API, teoretyczna znajomośc prostych wzorów projektowych"
+            tooltipText2="podstawowe typy, tworznie interfejsów, union type, prosta konfiguracja projektu"
           />
           <IconsContainer
             image1={react}
             image2={tailwind}
-            tooltipText1=""
-            tooltipText2=""
+            tooltipText1="komponenty funkcyjne i klasowe, zarządzeni stanem, useEffect, React refs, React context, customowe hooki"
+            tooltipText2="konfiguracja, responsywność, własne klasy i animacje, nadpisywanie domyślnych styli, motywy "
           />
           <IconsContainer
             image1={vite}
             image2={npm}
-            tooltipText1=""
-            tooltipText2=""
+            tooltipText1="konfiguracja z: eslint, prettier, typescript, tailwind, react"
+            tooltipText2="npm scripts, znajomość pakietów: React Router, i18next, PropTypes, nanoid, AG Grid, nodemon"
           />
           <IconsContainer
             image1={vscode}
             image2={github}
-            tooltipText1=""
-            tooltipText2=""
+            tooltipText1="znajomość pluginów ułatwiająch pracę (m.in. eslint i prettier), skróty klawiszowe, prosta konfiguracja ustawień użytkownika, praca na wbudowanej konsoli"
+            tooltipText2="podstawowa obsługa poleceń git: inicjalizacja, klonowanie, pushowanie, commitowanie, sprawdzanie statusu, śledzenie zmian. Forkowanie, gitignore, deploy repo na serwisach typu netlify i github pages"
           />
         </div>
-        <div className="grow basis-0"></div>
+        <div className=" flex justify-center p-10 ">
+          <ActiveIndexContext.Consumer>
+            {({ setActiveIndex }) => (
+              <NextBtn
+                isMobile
+                onClick={() => {
+                  goTo(3);
+                  setActiveIndex(3);
+                }}
+                isScrolled={this.state.isScrolled}
+              />
+            )}
+          </ActiveIndexContext.Consumer>
+        </div>
+        <div className="grow basis-0 "></div>
       </div>
     );
   }

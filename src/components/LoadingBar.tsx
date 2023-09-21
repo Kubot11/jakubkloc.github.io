@@ -23,14 +23,14 @@ export default class LoadingBar extends React.Component {
 
   render(): JSX.Element {
     return (
-      <div className="flex w-screen h-screen items-center justify-center">
-        <div className="animate-loading-bar-container max-w-lg my-12 mx-auto w-3/5">
+      <div className="flex h-screen w-screen items-center justify-center">
+        <div className="mx-auto my-12 w-3/5 max-w-lg animate-loading-bar-container">
           <div
             id="counter"
-            className="text-center mb-5 text-6xl dark:text-custom-font"
+            className="mb-5 text-center text-6xl dark:text-custom-font"
           ></div>
-          <div className="relative w-full h-8 border-solid border-3 border-custom-loading-bar-border flex items-center justify-center overflow-hidden skew-x-20">
-            <div className="absolute left-0 top-0 h-full animate-loading-bar "></div>
+          <div className="relative flex h-8 w-full skew-x-20 items-center justify-center overflow-hidden border-3 border-solid border-custom-loading-bar-border">
+            <div className="absolute left-0 top-0 h-full animate-loading-bar-light dark:animate-loading-bar-dark "></div>
           </div>
         </div>
       </div>

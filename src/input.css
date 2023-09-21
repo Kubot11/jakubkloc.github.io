@@ -3,35 +3,30 @@
 @tailwind utilities;
 
 @layer base {
-  /* :root {
-    --color: red;
-    cursor: url(./assets/cursor-link-custom.png) !important;
-  } */
-
-  /* html {
-    cursor: url(./assets/cursor-custom.png) !important;
-  } */
   a {
     @apply cursor-custom-link;
   }
   img {
     pointer-events: none;
   }
-  /* body {
-    cursor: url(./assets/cursor-custom.png) !important;
-  } */
 }
 
-/* CAROUSEL POSITION */
+/* CAROUSEL */
 .carusel-position {
   position: absolute;
   top: 49px;
   left: 0;
-  /* cursor: url(./assets/cursor-custom.png) !important; */
   animation: fade-in 1s ease-in-out forwards;
-  /* overflow-x: hidden; */
 }
 
+.carusel-position .rec-slider-container {
+  margin: 0;
+}
+
+/* CONTENT CONTAINER (to position next button on mobile)*/
+.content-container {
+  position: relative;
+}
 /* CONTACT MENU */
 .bigger-icon-hover:hover > img {
   margin-left: 12px;
@@ -59,35 +54,53 @@
   transition: background 0.4s;
 }
 
-.frame:hover {
-  background:
-    linear-gradient(to right, var(--color) var(--thickness), transparent 0)
-      var(--corners-offsets) var(--corners-offsets),
-    linear-gradient(to left, var(--color) var(--thickness), transparent 0)
-      calc(100% - var(--corners-offsets)) calc(100% - var(--corners-offsets)),
-    linear-gradient(to bottom, var(--color) var(--thickness), transparent 0)
-      var(--corners-offsets) var(--corners-offsets),
-    linear-gradient(to top, var(--color) var(--thickness), transparent 0)
-      calc(100% - var(--corners-offsets)) calc(100% - var(--corners-offsets));
-  background-repeat: no-repeat;
-  background-size: calc(var(--corners-size) - 15px)
-    calc(var(--corners-size) - 15px);
+@media only screen and (min-width: 480px) {
+  .frame:hover {
+    background:
+      linear-gradient(to right, var(--color) var(--thickness), transparent 0)
+        var(--corners-offsets) var(--corners-offsets),
+      linear-gradient(to left, var(--color) var(--thickness), transparent 0)
+        calc(100% - var(--corners-offsets)) calc(100% - var(--corners-offsets)),
+      linear-gradient(to bottom, var(--color) var(--thickness), transparent 0)
+        var(--corners-offsets) var(--corners-offsets),
+      linear-gradient(to top, var(--color) var(--thickness), transparent 0)
+        calc(100% - var(--corners-offsets)) calc(100% - var(--corners-offsets));
+    background-repeat: no-repeat;
+    background-size: calc(var(--corners-size) - 15px)
+      calc(var(--corners-size) - 15px);
+  }
+}
+/* special only for project */
+@media only screen and (max-width: 480px) {
+  .frame-mobile:hover {
+    background:
+      linear-gradient(to right, var(--color) var(--thickness), transparent 0)
+        var(--corners-offsets) var(--corners-offsets),
+      linear-gradient(to left, var(--color) var(--thickness), transparent 0)
+        calc(100% - var(--corners-offsets)) calc(100% - var(--corners-offsets)),
+      linear-gradient(to bottom, var(--color) var(--thickness), transparent 0)
+        var(--corners-offsets) var(--corners-offsets),
+      linear-gradient(to top, var(--color) var(--thickness), transparent 0)
+        calc(100% - var(--corners-offsets)) calc(100% - var(--corners-offsets));
+    background-repeat: no-repeat;
+    background-size: calc(var(--corners-size) - 15px)
+      calc(var(--corners-size) - 15px);
+  }
 }
 
 .frame-content {
-  border: solid white 2px;
+  border: solid black 2px;
   margin: 25px;
-  /* display: inline-block; */
 }
 
 /* PROJECTS DESCRIPTIONS */
 .text-overlay {
   position: absolute;
-  bottom: 16px;
-  left: 16px;
+  bottom: 0;
+  left: 0;
   right: 0;
-  background-color: rgba(20, 22, 22, 0.95);
-  color: white;
+  background-color: rgba(235, 235, 235, 0.95);
+  color: black;
   height: 0;
   overflow: hidden;
   transition: height 0.3s ease-in-out;
@@ -95,42 +108,45 @@
 }
 
 .project-container:hover .text-overlay {
-  height: 148px;
   border: solid white 2px;
   display: inline-block;
-}
-
-@media (min-width: 640px) {
-  @media not all and (min-width: 1024px) {
-    .project-container:hover .text-overlay {
-      height: 100px;
-    }
-  }
+  height: 84%;
+  overflow-y: scroll;
 }
 
 .project-container {
   position: relative;
 }
 
+/* change display on small screen */
+@media (min-width: 640px) {
+  @media not all and (min-width: 1024px) {
+    .project-container:hover .text-overlay {
+      height: 78%;
+    }
+  }
+}
+
 /* TOOLTIPS */
+
+/* continaer with text */
 .tooltip:before {
   content: attr(data-text);
   position: absolute;
 
   /* vertically center */
-  top: 50%;
-  transform: translateY(-50%);
-
-  /* move to right */
-  left: 100%;
-  margin-left: 15px;
+  bottom: 100%;
+  transform: translateY(-20px);
+  left: 0px;
+  left: -85px;
+  padding: 6px;
 
   /* basic styles */
-  padding: 16px;
-  border: solid 2px white;
-  background: #000;
-  color: #fff;
-  text-align: justify;
+  width: 260px;
+  border: solid 2px black;
+  background-color: rgba(235, 235, 235, 0.95);
+  color: black;
+  text-align: left;
   border-radius: 5px;
   font-size: medium;
   z-index: 10;
@@ -142,32 +158,33 @@
 }
 
 @media (min-width: 640px) {
-  @media not all and (min-width: 1024px) {
+  @media not all and (min-width: 1034px) {
     .tooltip:before {
       font-size: small;
       padding: 3px;
     }
   }
 }
+
+/* making the .tooltip span a container for the tooltip text */
 .tooltip {
-  position: relative; /* making the .tooltip span a container for the tooltip text */
+  position: relative;
 }
 
+/* arrow */
 .tooltip:after {
   content: "";
   position: absolute;
 
   /* position tooltip correctly */
-  left: 100%;
-  margin-left: -24px;
+  left: 15px;
 
-  /* vertically center */
-  top: 50%;
-  transform: translateY(-50%);
+  bottom: 100%;
+  transform: translateY(50%);
 
   /* the arrow */
-  border: 20px solid #000;
-  border-color: transparent white transparent transparent;
+  border: 20px solid;
+  border-color: black transparent transparent transparent;
 
   /* animating */
   opacity: 0;
@@ -180,87 +197,21 @@
   opacity: 1;
 }
 
-/* TOOLTIP LEFT */
-.tooltip-left:after {
-  left: 9px;
-  border-color: transparent transparent transparent white;
+@media (min-width: 1024px) {
+  .tooltip:after {
+    left: 25px;
+  }
 }
 
-.tooltip-left:before {
-  left: initial;
-  margin: initial;
-
-  margin-right: 15px;
-  right: 100%;
+@media (max-width: 1024px) {
+  .tooltip:before {
+    left: -65px;
+    width: 200px;
+  }
 }
-
-/* TABLE */
-
-/* .ag-header-icon,
-.ag-header-cell-menu-button,
-.ag-header-icon,
-.ag-header-label-icon,
-.ag-filter-icon,
-.ag-header-icon,
-.ag-header-label-icon,
-.ag-sort-order,
-.ag-header-icon,
-.ag-header-label-icon,
-.ag-sort-ascending-icon,
-.ag-header-icon,
-.ag-header-label-icon,
-.ag-sort-descending-icon,
-.ag-header-icon,
-.ag-header-label-icon,
-.ag-sort-none-icon {
-  cursor: help;
-} */
-/* form {
-  cursor:help;
-}
-.ag-theme-alpine-dark {
-  cursor:help;
-}
-
-.table-custom-cursor {
-  cursor: help ;
-}
-
-.ag-header-cell-filtered {
-  cursor: help ;
-}
-
-.ag-header {
-  cursor: help ;
-} */
-
-/* .ag-cell-label-container   {
-  background-color: red;
-  cursor:help;
-} */
-/* 
-ag-cell-label-container */
-/* .ag-header-cell-sorted-desc,.ag-header-cell-sorted-none,.ag-header-cell-sorted-asc{
-cursor:help;
-}
-.ag-header-cell-label {
-  cursor: help;
-}
-.ag-cell-label-container {
-  cursor: help;
-}
-.ag-menu,
-.ag-ltr,
-.ag-popup {
-  cursor: help;
-}
-
-.ag-filter {
-  cursor: help;
-} */
 
 /* ANIMATION CLASSES */
-
+/* navbar */
 @keyframes navbar {
   0% {
     top: -48px;
@@ -274,6 +225,7 @@ cursor:help;
   animation: navbar 0.5s ease-in-out 1s forwards;
 }
 
+/* footer */
 @keyframes footer {
   0% {
     height: 0px;
@@ -289,6 +241,7 @@ cursor:help;
   animation: footer 0.5s ease-in-out 1s forwards;
 }
 
+/* contact-icons */
 @keyframes contact-icons {
   0% {
     left: -26px;
@@ -302,6 +255,7 @@ cursor:help;
   animation: contact-icons 0.5s ease-in-out 1s forwards;
 }
 
+/* next button */
 @keyframes fade-in {
   0% {
     opacity: 0;
@@ -348,6 +302,7 @@ cursor:help;
     transform 300ms ease-in-out;
 }
 
+/* TABLE */
 .table-container * {
   @apply cursor-custom;
 }
@@ -356,43 +311,100 @@ cursor:help;
   @apply cursor-custom;
 }
 
-.ag-root ::-webkit-scrollbar {
-  @apply cursor-custom;
-  height: 5px;
+@media only screen and (min-width: 480px) {
+  /* table scrollbars */
+  .ag-root ::-webkit-scrollbar {
+    @apply cursor-custom;
+    height: 10px;
+    width: 10px;
+  }
+  .ag-root ::-webkit-scrollbar-track {
+    background: #141616;
+  }
+
+  /* Handle */
+  .ag-root ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+
+  /* Handle on hover */
+  .ag-root ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+  /* browswer scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #141616;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
 }
-.ag-root ::-webkit-scrollbar-track {
-  background: #141616;
+/* DARK THEME */
+@media (prefers-color-scheme: dark) {
+  .frame-content {
+    border: solid #ffffff 2px;
+  }
+  .text-overlay {
+    background-color: rgba(20, 22, 22, 0.95);
+    color: white;
+  }
+
+  .tooltip:before {
+    border: solid 2px white;
+    background-color: #000;
+    color: #fff;
+  }
+
+  .tooltip:after {
+    /* arrow */
+    border: 20px solid;
+    border-color: white transparent transparent transparent;
+  }
 }
 
-/* Handle */
-.ag-root ::-webkit-scrollbar-thumb {
-  background: #888;
+/* MOBILE LANDSCAPE */
+@media only screen and (orientation: landscape) and (max-height: 480px) {
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("../public/rotate-phone.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 30;
+  }
 }
 
-/* Handle on hover */
-.ag-root ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+@media only screen and (max-width: 880px) {
+  .faster-wrap {
+    max-width: 700px;
+  }
 }
 
-::-webkit-scrollbar {
-  /* @apply cursor-custom; */
-  width: 10px;
-}
-::-webkit-scrollbar-track {
-  /* background: #f1f1f1; */
-  background: #141616;
-}
+@media screen and (orientation: portrait) {
+  .mobile-table {
+    position: fixed;
+    left: 100vw;
+    top: 0px;
+    width: 100vh;
+    height: 100vw;
+    transform-origin: top left;   
+    transform: rotate(90deg);
 
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #888;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
-
-.carusel-position .rec-slider-container {
-  margin: 0;
+    z-index: 50;
+  }
 }

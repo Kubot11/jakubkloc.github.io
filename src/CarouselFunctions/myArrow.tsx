@@ -13,13 +13,13 @@ export default function myArrow({
   onClick,
   isEdge,
 }: MyArrowProps): JSX.Element {
+  // no prev/next buttons on small screens
   if (window.innerWidth < 640) {
     return <></>;
   }
+
+  // Prev button
   if (type === consts.PREV) {
-    // if (isEdge) {
-    //   return <></>;
-    // }
     return (
       <div
         onClick={onClick}
@@ -29,6 +29,7 @@ export default function myArrow({
         <NextBtn />
       </div>
     );
+    // Next button
   } else {
     if (isEdge) {
       return <></>;

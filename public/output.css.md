@@ -568,10 +568,6 @@ img {
   visibility: hidden;
 }
 
-.fixed {
-  position: fixed;
-}
-
 .absolute {
   position: absolute;
 }
@@ -582,10 +578,6 @@ img {
 
 .bottom-0 {
   bottom: 0px;
-}
-
-.bottom-2 {
-  bottom: 0.5rem;
 }
 
 .left-0 {
@@ -602,10 +594,6 @@ img {
 
 .right-0 {
   right: 0px;
-}
-
-.right-5 {
-  right: 1.25rem;
 }
 
 .top-0 {
@@ -628,25 +616,12 @@ img {
   z-index: 20;
 }
 
-.z-40 {
-  z-index: 40;
-}
-
-.z-50 {
-  z-index: 50;
-}
-
 .m-4 {
   margin: 1rem;
 }
 
 .m-auto {
   margin: auto;
-}
-
-.mx-12 {
-  margin-left: 3rem;
-  margin-right: 3rem;
 }
 
 .mx-32 {
@@ -664,18 +639,9 @@ img {
   margin-right: auto;
 }
 
-.my-0 {
-  margin-top: 0px;
-  margin-bottom: 0px;
-}
-
 .my-12 {
   margin-top: 3rem;
   margin-bottom: 3rem;
-}
-
-.mb-4 {
-  margin-bottom: 1rem;
 }
 
 .mb-5 {
@@ -747,12 +713,12 @@ img {
   width: 50%;
 }
 
-.w-11\/12 {
-  width: 91.666667%;
-}
-
 .w-20 {
   width: 5rem;
+}
+
+.w-3\/4 {
+  width: 75%;
 }
 
 .w-3\/5 {
@@ -769,10 +735,6 @@ img {
 
 .w-7 {
   width: 1.75rem;
-}
-
-.w-8 {
-  width: 2rem;
 }
 
 .w-9 {
@@ -977,11 +939,6 @@ img {
   overflow-x: hidden;
 }
 
-.break-normal {
-  overflow-wrap: normal;
-  word-break: normal;
-}
-
 .rounded-full {
   border-radius: 9999px;
 }
@@ -1172,10 +1129,6 @@ img {
 
 .font-bold {
   font-weight: 700;
-}
-
-.leading-relaxed {
-  line-height: 1.625;
 }
 
 .text-\[--color\] {
@@ -1613,26 +1566,13 @@ img {
     background-image: url("../public/rotate-phone.png");
     background-size: cover;
     background-repeat: no-repeat;
-    z-index: 30;
+    z-index: 100;
   }
 }
 
 @media only screen and (max-width: 880px) {
   .faster-wrap {
     max-width: 700px;
-  }
-}
-
-@media screen and (orientation: portrait) {
-  .mobile-table {
-    position: fixed;
-    left: 100vw;
-    top: 0px;
-    width: 100vh;
-    height: 100vw;
-    transform-origin: top left;
-    transform: rotate(90deg);
-    z-index: 50;
   }
 }
 
@@ -1760,6 +1700,10 @@ img {
 
   .sm\:h-16 {
     height: 4rem;
+  }
+
+  .sm\:w-11\/12 {
+    width: 91.666667%;
   }
 
   .sm\:w-16 {
@@ -1974,6 +1918,10 @@ img {
 
   .lg\:h-\[90px\] {
     height: 90px;
+  }
+
+  .lg\:w-3\/4 {
+    width: 75%;
   }
 
   .lg\:w-\[250px\] {
