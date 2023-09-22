@@ -682,12 +682,20 @@ img {
   margin-bottom: 1.25rem;
 }
 
+.mb-\[10vh\] {
+  margin-bottom: 10vh;
+}
+
 .mt-12 {
   margin-top: 3rem;
 }
 
-.mb-\[10vh\] {
-  margin-bottom: 10vh;
+.mb-\[30vh\] {
+  margin-bottom: 30vh;
+}
+
+.mb-\[5vh\] {
+  margin-bottom: 5vh;
 }
 
 .inline-block {
@@ -1132,16 +1140,8 @@ img {
   padding-bottom: 3rem;
 }
 
-.pb-24 {
-  padding-bottom: 6rem;
-}
-
 .pb-8 {
   padding-bottom: 2rem;
-}
-
-.pb-14 {
-  padding-bottom: 3.5rem;
 }
 
 .text-left {

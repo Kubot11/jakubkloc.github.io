@@ -104,22 +104,23 @@ export default class AboutMe extends React.Component<
               </p>
             </div>
           </Frame>
-          <ActiveIndexContext.Consumer>
-            {({ setActiveIndex }) => (
-              <NextBtn
-                isMobile
-                onClick={() => {
-                  goTo(1);
-                  setActiveIndex(1);
-                }}
-                isScrolled={this.state.isScrolled}
-              />
-            )}
-          </ActiveIndexContext.Consumer>
+          <div className="mb-[5vh]">
+            <ActiveIndexContext.Consumer>
+              {({ setActiveIndex }) => (
+                <NextBtn
+                  isMobile
+                  onClick={() => {
+                    goTo(1);
+                    setActiveIndex(1);
+                  }}
+                  isScrolled={this.state.isScrolled}
+                />
+              )}
+            </ActiveIndexContext.Consumer>
+          </div>
         </div>
-        {/* <div className=" grow basis-0"></div> */}
+        <div className=" grow basis-0"></div>
         <div
-          className={isMobile ? " mb-[10vh] grow basis-0" : "grow basis-0"}
         ></div>
       </div>
     );
