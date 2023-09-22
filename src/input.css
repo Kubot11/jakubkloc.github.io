@@ -383,9 +383,11 @@
     width: 100vw;
     height: 100vh;
     background-image: url("../public/rotate-phone.png");
-    background-size: cover;
+    background-size: contain;
     background-repeat: no-repeat;
     z-index: 30;
+    background-color: #fff;
+    background-position: center;
   }
 }
 
@@ -398,13 +400,21 @@
 @media screen and (orientation: portrait) {
   .mobile-table {
     position: fixed;
-    left: 100vw;
-    top: 0px;
-    width: 100vh;
-    height: 100vw;
-    transform-origin: top left;   
-    transform: rotate(90deg);
-
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
     z-index: 50;
+    background-image: url("../public/rotate-phone-portrait.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: #fff;
+    background-position: center;
   }
+}
+
+/* DISABLE BLUE MARK WHEN TAP LINK ON MOBILE */
+
+.no-blue-tap {
+  -webkit-tap-highlight-color: transparent;
 }

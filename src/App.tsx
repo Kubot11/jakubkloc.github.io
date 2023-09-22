@@ -95,14 +95,16 @@ function App(): JSX.Element {
       {start && <Footer />}
 
       {isMobile && mobileTable && (
-        <div className="mobile-table fixed left-0 top-0 z-40 h-full w-full">
-          <Table />
-          <button
-            onClick={() => setMobileTable(false)}
-            className="fixed bottom-2 right-5 z-50 "
-          >
-            <img className="h-8 w-8 rounded-full" src={backArrow} />
-          </button>
+        <div className="mobile-table">
+          <div className="fixed left-0 top-0 z-40 h-full w-full portrait:hidden">
+            <Table />
+            <button
+              onClick={() => setMobileTable(false)}
+              className="fixed bottom-2 right-5 z-50 "
+            >
+              <img className="h-8 w-8 rounded-full" src={backArrow} />
+            </button>
+          </div>
         </div>
       )}
     </div>

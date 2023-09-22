@@ -13,15 +13,17 @@ export default class ContactIcons extends React.Component {
     return (
       <div className="contact-icons-animation absolute bottom-0  left-[-26px] mb-5 flex flex-col">
         <a
+          target="_blank"
           href="mailto:jakub.kloc@proton.me"
-          className="bigger-icon-hover h-14 w-20"
+          className="no-blue-tap bigger-icon-hover h-14 w-20"
         >
           <img className="h-9 w-9 duration-500" src={email} />
         </a>
 
         <a
+          target="_blank"
           href="https://github.com/jakubkloc"
-          className="bigger-icon-hover h-14 w-20"
+          className="no-blue-tap bigger-icon-hover h-14 w-20"
         >
           <img
             className="h-9 w-9 duration-500"
@@ -29,10 +31,11 @@ export default class ContactIcons extends React.Component {
           />
         </a>
         <a
+          target="_blank"
           href="https://www.linkedin.com/in/jakub-kloc-744833292"
-          className="bigger-icon-hover h-14 w-20"
+          className="no-blue-tap bigger-icon-hover h-14 w-20"
         >
-          <img className="h-9 w-9 duration-500" src={linkedin} />
+          <img className="w-9duration-500 h-9" src={linkedin} />
         </a>
       </div>
     );

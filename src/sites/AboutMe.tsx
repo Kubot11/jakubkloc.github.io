@@ -117,7 +117,10 @@ export default class AboutMe extends React.Component<
             )}
           </ActiveIndexContext.Consumer>
         </div>
-        <div className=" grow basis-0"></div>
+        {/* <div className=" grow basis-0"></div> */}
+        <div
+          className={isMobile ? " mb-[10vh] grow basis-0" : "grow basis-0"}
+        ></div>
       </div>
     );
   }
