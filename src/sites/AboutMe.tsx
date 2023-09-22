@@ -59,7 +59,7 @@ export default class AboutMe extends React.Component<
           O Mnie
         </h1>
 
-        <div className="content-container flex  flex-col items-center gap-8 pb-12 sm:flex-row sm:items-stretch sm:pb-0 sm:max-md:flex-col  sm:max-md:items-center md:max-lg:gap-1">
+        <div className="content-container flex  flex-col items-center gap-8 sm:flex-row sm:items-stretch sm:pb-0 sm:max-md:flex-col  sm:max-md:items-center md:max-lg:gap-1">
           <Frame cornersSize={"80px"} thickness={"4px"} cornersOffsets="6px">
             <img
               className="
@@ -104,24 +104,23 @@ export default class AboutMe extends React.Component<
               </p>
             </div>
           </Frame>
-          <div className="mb-[5vh]">
-            <ActiveIndexContext.Consumer>
-              {({ setActiveIndex }) => (
-                <NextBtn
-                  isMobile
-                  onClick={() => {
-                    goTo(1);
-                    setActiveIndex(1);
-                  }}
-                  isScrolled={this.state.isScrolled}
-                />
-              )}
-            </ActiveIndexContext.Consumer>
-          </div>
+        </div>
+
+        <div className="py-20 flex justify-center">
+          <ActiveIndexContext.Consumer>
+            {({ setActiveIndex }) => (
+              <NextBtn
+                isMobile
+                onClick={() => {
+                  goTo(1);
+                  setActiveIndex(1);
+                }}
+                isScrolled={this.state.isScrolled}
+              />
+            )}
+          </ActiveIndexContext.Consumer>
         </div>
         <div className=" grow basis-0"></div>
-        <div
-        ></div>
       </div>
     );
   }

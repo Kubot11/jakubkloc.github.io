@@ -71,7 +71,7 @@ export default class KnowledgeBase extends React.Component<KnowledgeBaseProps> {
           {!isMobile && <Table />}
 
           {isMobile && (
-            <div className="flex flex-col items-center gap-4 ">
+            <div className="flex flex-col items-center gap-4 py-16 ">
               <button
                 className="h-max rounded-lg bg-[var(--color)] px-8 py-1.5 text-xs font-bold text-white dark:bg-[#737373]  sm:max-lg:px-4  sm:max-lg:text-[10px]"
                 onClick={() => setMobileTable(true)}

@@ -79,7 +79,7 @@ export default class TechStack extends React.Component<
           </Frame>
         </div>
 
-        <div className="faster-wrap content-container   mt-12 flex flex-wrap justify-center  gap-16 pb-8 sm:gap-8 sm:pb-0   lg:mt-24 lg:max-w-[1300px] xl:gap-x-24">
+        <div className="faster-wrap content-container   mt-12 flex flex-wrap justify-center  gap-16  sm:gap-8 sm:pb-0   lg:mt-24 lg:max-w-[1300px] xl:gap-x-24">
           <IconsContainer
             image1={html}
             image2={css}
@@ -111,7 +111,7 @@ export default class TechStack extends React.Component<
             tooltipText2="podstawowa obsługa poleceń git: inicjalizacja, klonowanie, pushowanie, commitowanie, sprawdzanie statusu, śledzenie zmian. Forkowanie, gitignore, deploy repo na serwisach typu netlify i github pages"
           />
         </div>
-        <div className=" flex justify-center p-10 ">
+        <div className=" flex justify-center py-20 ">
           <ActiveIndexContext.Consumer>
             {({ setActiveIndex }) => (
               <NextBtn

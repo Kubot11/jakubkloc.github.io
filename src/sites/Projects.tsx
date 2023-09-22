@@ -63,7 +63,7 @@ export default class Projects extends React.Component<
           Wybrane Projekty
         </h1>
 
-        <div className="content-container flex w-full  flex-col  gap-y-20 pb-12  sm:gap-y-12 sm:pb-12">
+        <div className="content-container flex w-full  flex-col  gap-y-20 sm:gap-y-12 sm:pb-12">
           <div className="flex flex-col justify-evenly gap-y-20 sm:mb-0 sm:flex-row sm:gap-y-[normal] ">
             {/* TMDB WEBSITE */}
             <Project
@@ -319,20 +319,22 @@ export default class Projects extends React.Component<
               demoLink="https://jakubkloc.github.io"
             />
           </div>
-
-          <ActiveIndexContext.Consumer>
-            {({ setActiveIndex }) => (
-              <NextBtn
-                isMobile
-                onClick={() => {
-                  goTo(2);
-                  setActiveIndex(2);
-                }}
-                isScrolled={this.state.isScrolled}
-              />
-            )}
-          </ActiveIndexContext.Consumer>
+       
         </div>
+        <div className="flex justify-center py-20">
+            <ActiveIndexContext.Consumer>
+              {({ setActiveIndex }) => (
+                <NextBtn
+                  isMobile
+                  onClick={() => {
+                    goTo(2);
+                    setActiveIndex(2);
+                  }}
+                  isScrolled={this.state.isScrolled}
+                />
+              )}
+            </ActiveIndexContext.Consumer>
+          </div>
         <div className=" grow basis-0"></div>
       </div>
     );
