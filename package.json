@@ -8,8 +8,8 @@
     "build": "tsc && vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "tailwind": "npx tailwindcss -i ./src/input.css -o ./public/output.css --watch",
-    "tailwind-build": "npx tailwindcss -i ./src/input.css -o ./dist/output.css -m"
+    "tailwind": "npx tailwindcss -i ./src/styles/input.css -o ./src/styles/output.css --watch",
+    "tailwind-build": "npx tailwindcss -i ./src/styles/input.css -o ./src/styles/output.css -m"
   },
   "dependencies": {
     "@itseasy21/react-elastic-carousel": "^0.12.3",

@@ -55,8 +55,8 @@ export default class KnowledgeBase extends React.Component<KnowledgeBaseProps> {
                 </p>
               ) : (
                 <p className="frame-content mx-12 my-0 p-4 text-sm leading-relaxed ">
-                  W poniższej tabeli zostały wypisane materiały oraz kursy które przepracowałem.{" "}
-                  <br />
+                  W poniższej tabeli zostały wypisane materiały oraz kursy które
+                  przepracowałem. <br />
                   Tabele można sortować po tematyce i długości oraz filtrować po
                   tematyce.
                   <br />
@@ -81,7 +81,11 @@ export default class KnowledgeBase extends React.Component<KnowledgeBaseProps> {
 
               <a
                 className="mb-4  h-max rounded-lg bg-[var(--color)] px-8 py-1.5 text-xs font-bold text-white dark:bg-[#737373]  sm:max-lg:px-4  sm:max-lg:text-[10px]"
-                href=""
+                href="/Jakub-Kloc-Resume.pdf"
+                download
+                onClick={(event) => {
+                  window.open(event.currentTarget.href, "_blank");
+                }}
               >
                 POBIERZ CV
               </a>

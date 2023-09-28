@@ -135,7 +135,14 @@ export default class Navbar extends React.Component<NavbarProps, NavbarState> {
             </a>
 
             {/* DOWNLOAD CV */}
-            <a className="text-custom-font hover:opacity-75">
+            <a
+              href="/Jakub-Kloc-Resume.pdf"
+              download
+              onClick={(event) => {
+                window.open(event.currentTarget.href, "_blank");
+              }}
+              className="text-custom-font hover:opacity-75"
+            >
               {smallScreen ? (
                 <img className="w-7" src={iconCV} />
               ) : (

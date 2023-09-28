@@ -319,22 +319,21 @@ export default class Projects extends React.Component<
               demoLink="https://jakubkloc.github.io"
             />
           </div>
-       
         </div>
-        <div className="flex justify-center py-20">
-            <ActiveIndexContext.Consumer>
-              {({ setActiveIndex }) => (
-                <NextBtn
-                  isMobile
-                  onClick={() => {
-                    goTo(2);
-                    setActiveIndex(2);
-                  }}
-                  isScrolled={this.state.isScrolled}
-                />
-              )}
-            </ActiveIndexContext.Consumer>
-          </div>
+        <div className="flex justify-center py-20 sm:hidden">
+          <ActiveIndexContext.Consumer>
+            {({ setActiveIndex }) => (
+              <NextBtn
+                isMobile
+                onClick={() => {
+                  goTo(2);
+                  setActiveIndex(2);
+                }}
+                isScrolled={this.state.isScrolled}
+              />
+            )}
+          </ActiveIndexContext.Consumer>
+        </div>
         <div className=" grow basis-0"></div>
       </div>
     );

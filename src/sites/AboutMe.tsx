@@ -4,6 +4,9 @@ import { isMobile } from "react-device-detect";
 import NextBtn from "../components/NextBtn";
 
 import { ActiveIndexContext } from "../helpers/ActiveIndexContext";
+
+import photo from "../assets/photo.jpg";
+
 interface AboutMeProps {
   goTo: (index: number) => void;
 }
@@ -63,14 +66,15 @@ export default class AboutMe extends React.Component<
           <Frame cornersSize={"80px"} thickness={"4px"} cornersOffsets="6px">
             <img
               className="
+              object-cover
               frame-content
               w-[300px]
               max-w-[380px] 
               sm:max-w-[60px] 
               md:max-w-[200px]  
               lg:w-[250px]  "
-              src=""
-              alt=""
+              src={photo}
+              alt="personal-photo"
             />
           </Frame>
           <Frame cornersSize={"80px"} thickness={"4px"} cornersOffsets="6px">
@@ -106,7 +110,7 @@ export default class AboutMe extends React.Component<
           </Frame>
         </div>
 
-        <div className="py-20 flex justify-center">
+        <div className="flex justify-center py-20 sm:hidden">
           <ActiveIndexContext.Consumer>
             {({ setActiveIndex }) => (
               <NextBtn

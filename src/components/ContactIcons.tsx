@@ -4,6 +4,7 @@ import github from "../assets/github-icon.png";
 import linkedin from "../assets/linkedin-icon.png";
 
 import githubLight from "../assets/github-icon-light.png";
+import { isMobile } from "react-device-detect";
 
 export default class ContactIcons extends React.Component {
   render(): JSX.Element {
@@ -15,7 +16,9 @@ export default class ContactIcons extends React.Component {
         <a
           target="_blank"
           href="mailto:jakub.kloc@proton.me"
-          className="no-blue-tap bigger-icon-hover h-14 w-20"
+          className={
+            isMobile ? "no-blue-tap  h-14 w-20" : " bigger-icon-hover h-14 w-20"
+          }
         >
           <img className="h-9 w-9 duration-500" src={email} />
         </a>
@@ -23,7 +26,9 @@ export default class ContactIcons extends React.Component {
         <a
           target="_blank"
           href="https://github.com/jakubkloc"
-          className="no-blue-tap bigger-icon-hover h-14 w-20"
+          className={
+            isMobile ? "no-blue-tap  h-14 w-20" : " bigger-icon-hover h-14 w-20"
+          }
         >
           <img
             className="h-9 w-9 duration-500"
@@ -33,9 +38,11 @@ export default class ContactIcons extends React.Component {
         <a
           target="_blank"
           href="https://www.linkedin.com/in/jakub-kloc-744833292"
-          className="no-blue-tap bigger-icon-hover h-14 w-20"
+          className={
+            isMobile ? "no-blue-tap  h-14 w-20" : " bigger-icon-hover h-14 w-20"
+          }
         >
-          <img className="w-9duration-500 h-9" src={linkedin} />
+          <img className="h-9 w-9 duration-500" src={linkedin} />
         </a>
       </div>
     );

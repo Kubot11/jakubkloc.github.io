@@ -405,7 +405,7 @@
     width: 100vw;
     height: 100vh;
     z-index: 50;
-    background-image: url("../public/rotate-phone-portrait.png");
+    background-image: url("/rotate-phone-portrait.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-color: #fff;
