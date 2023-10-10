@@ -37,7 +37,7 @@ export default class KnowledgeBase extends React.Component<KnowledgeBaseProps> {
                   celu przedstawienia mojej znajomości danego zagadnienia.{" "}
                   <br />
                   <br />
-                  Po kliknieciu na nazwę kursu zostanie otworzona nowa karta z
+                  Po kliknięciu nazwy kursu zostanie otworzona nowa karta z
                   kursem, analogicznie z wykonanymi zadaniami. <br />
                   <br />
                   Tabele można sortować po tematyce i długości.
@@ -48,8 +48,8 @@ export default class KnowledgeBase extends React.Component<KnowledgeBaseProps> {
                   ⭐- krótkie materiały do 60 minut
                   <br />
                   ⭐⭐- materiały od 60 minut do 2 godzin i crash cursy
-                  <br /> ⭐⭐⭐- kursy wymagające kilku dni od 2 do paru godziń
-                  <br /> ⭐⭐⭐⭐- kursy kilkudziesięcio godzinne
+                  <br /> ⭐⭐⭐- kursy wymagające kilku dni od 2 do paru godzin
+                  <br /> ⭐⭐⭐⭐- kursy kilkudziesięciogodzinne
                   <br />
                   ⭐⭐⭐⭐⭐- najbardziej obszerne, najdłuższe kursy{" "}
                 </p>

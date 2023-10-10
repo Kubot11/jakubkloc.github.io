@@ -174,7 +174,7 @@ export default class Projects extends React.Component<
                   >
                     figmie
                   </a>{" "}
-                  oraz wzkazał z którego API skorzystać. Cała logika aplikacji,
+                  oraz wskazał, z którego API skorzystać. Cała logika aplikacji,
                   zapytania do API, strona z ustawieniami i dostosowanie
                   aplikacji na urządzenia mobilne zostały zakodowane przeze
                   mnie. Wykorzystałem biblioteki{" "}
@@ -222,17 +222,17 @@ export default class Projects extends React.Component<
                   >
                     Scrimba
                   </a>
-                  . Design został odzwzorowany z{" "}
+                  . Design został odwzorowany z{" "}
                   <a
                     target="_blank"
                     className="font-bold text-[--color]"
                     href="https://www.figma.com/file/FqsxRUhAaXM4ezddQK0CdR/Tenzies?type=design&node-id=0-1&mode=design"
                   >
-                    &nbsp; figmy
+                    &nbsp; Figmy
                   </a>
                   . Rozbudowałem grę o elementy proponowane przez autora kursu,
                   ponadto: dodałem ekran startowy, animacje potrząsania kośćmi,
-                  efekty dźwiękowe, zadbałem o funcjonowanie na urządzeniach
+                  efekty dźwiękowe, zadbałem o funkcjonowanie na urządzeniach
                   mobilnych i wykorzystałem bibliotekę{" "}
                   <a
                     target="_blank"
@@ -252,7 +252,7 @@ export default class Projects extends React.Component<
             <Project
               description={
                 <p className="p-4 text-left text-base sm:max-lg:p-2 sm:max-lg:text-[12px] sm:max-lg:leading-4 ">
-                  Strona którą właśnie przeglądasz, napisana w{" "}
+                  Strona, którą właśnie przeglądasz, napisana w{" "}
                   <a
                     target="_blank"
                     className="font-bold text-[--color]"
@@ -276,7 +276,7 @@ export default class Projects extends React.Component<
                   >
                     &nbsp;Typescipt
                   </a>
-                  . Funkcjonuje również w wersji moblinej. Wykorzystałem
+                  . Funkcjonuje również w wersji mobilnej. Wykorzystałem
                   bibliotekę{" "}
                   <a
                     target="_blank"

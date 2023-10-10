@@ -66,10 +66,10 @@ export default class AboutMe extends React.Component<
           <Frame cornersSize={"80px"} thickness={"4px"} cornersOffsets="6px">
             <img
               className="
-              object-cover
               frame-content
               w-[300px]
-              max-w-[380px] 
+              max-w-[380px]
+              object-cover 
               sm:max-w-[60px] 
               md:max-w-[200px]  
               lg:w-[250px]  "
@@ -103,7 +103,7 @@ export default class AboutMe extends React.Component<
                 Poza programowaniem hobbystycznie interesuje się muzyką oraz
                 rozwojem osobistym. Jestem osobą szczerą, uważam, że komunikacja
                 jest kluczem do sprawnego działania, zawsze wierzę w siebie,
-                jestem osobą konsekwetną, lecz nie jestem zamknięty na jedną
+                jestem osobą konsekwentną, lecz nie jestem zamknięty na jedną
                 ścieżkę, gdy dostrzeże nowe możliwości.
               </p>
             </div>

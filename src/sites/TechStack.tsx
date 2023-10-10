@@ -83,32 +83,32 @@ export default class TechStack extends React.Component<
           <IconsContainer
             image1={html}
             image2={css}
-            tooltipText1="podstawowe elementy, elementy semantyczne, aria-label i atrybut alt, formularze, znaki specjalne, elementy meta, id, class, atrubuty zdarzeń, tabindex, style, script defer"
-            tooltipText2="podstawowe i zawansowane właściwości, box model,  display, specyficzność, !important, zapytania media, jednostki, selektory, pseudoklasy i pseudoelementy, z-index, pozycjonowanie, animacje, zmienne, calc(), flexbox, grid, hsla(), rgba()"
+            tooltipText1="Podstawowe elementy, elementy semantyczne, aria-label i atrybut alt, formularze, znaki specjalne, elementy meta, id, class, atrubuty zdarzeń, tabindex, style, script defer"
+            tooltipText2="Podstawowe i zaawansowane właściwości, box model,  display, specyficzność, !important, zapytania media, jednostki, selektory, pseudoklasy i pseudoelementy, z-index, pozycjonowanie, animacje, zmienne, calc(), flexbox, grid, hsla(), rgba()"
           />
           <IconsContainer
             image1={javascript}
             image2={typescript}
-            tooltipText1="znajomość składni, pętla zdarzeń, asynchroniczność, promisy, this, ternary operator, destrukturyzacja, zakres zmiennych, obsługa błędów, dynamiczne importowanie, manipulacja DOM, metody window, delegacja zdarzeń, formularze, Fetch API, teoretyczna znajomośc prostych wzorów projektowych"
-            tooltipText2="podstawowe typy, tworznie interfejsów, union type, prosta konfiguracja projektu"
+            tooltipText1="Znajomość składni, pętla zdarzeń, asynchroniczność, promisy, this, ternary operator, destrukturyzacja, zakres zmiennych, obsługa błędów, dynamiczne importowanie, manipulacja DOM, metody window, delegacja zdarzeń, formularze, Fetch API, teoretyczna znajomość prostych wzorów projektowych"
+            tooltipText2="Podstawowe typy, tworzenie interfejsów, union type, prosta konfiguracja projektu"
           />
           <IconsContainer
             image1={react}
             image2={tailwind}
-            tooltipText1="komponenty funkcyjne i klasowe, zarządzeni stanem, useEffect, React refs, React context, customowe hooki"
-            tooltipText2="konfiguracja, responsywność, własne klasy i animacje, nadpisywanie domyślnych styli, motywy "
+            tooltipText1="Komponenty funkcyjne i klasowe, zarządzeni stanem, useEffect, React refs, React context, customowe hooki"
+            tooltipText2="Konfiguracja, responsywność, własne klasy i animacje, nadpisywanie domyślnych styli, motywy"
           />
           <IconsContainer
             image1={vite}
             image2={npm}
-            tooltipText1="konfiguracja z: eslint, prettier, typescript, tailwind, react"
-            tooltipText2="npm scripts, znajomość pakietów: React Router, i18next, PropTypes, nanoid, AG Grid, nodemon"
+            tooltipText1="Konfiguracja z: ESLint, Prettier, TypeScript, Tailwind, React"
+            tooltipText2="npm scripts, znajomość pakietów: React Router, i18next, Prop Types, nanoid, AG Grid, nodemon"
           />
           <IconsContainer
             image1={vscode}
             image2={github}
-            tooltipText1="znajomość pluginów ułatwiająch pracę (m.in. eslint i prettier), skróty klawiszowe, prosta konfiguracja ustawień użytkownika, praca na wbudowanej konsoli"
-            tooltipText2="podstawowa obsługa poleceń git: inicjalizacja, klonowanie, pushowanie, commitowanie, sprawdzanie statusu, śledzenie zmian. Forkowanie, gitignore, deploy repo na serwisach typu netlify i github pages"
+            tooltipText1="Znajomość pluginów ułatwiających pracę (m.in. ESLint i Prettier), skróty klawiszowe, prosta konfiguracja ustawień użytkownika, praca na wbudowanej konsoli"
+            tooltipText2="Podstawowa obsługa poleceń git: init, clone, push, commit, sprawdzanie statusu, śledzenie zmian. Forkowanie repozytorium, konfiguracja .gitignore, wdrażanie repozytorium na serwisy typu Netlify i GitHub Pages"
           />
         </div>
         <div className=" flex justify-center py-20 ">
