@@ -1,5 +1,3 @@
-
-
 import React from "react";
 import Frame from "../components/Frame";
 import IconsContainer from "../components/IconsContainer";
@@ -19,9 +17,9 @@ import { ActiveIndexContext } from "../helpers/ActiveIndexContext";
 import { isMobile } from "react-device-detect";
 
 // import Swiper core and required modules
-import { Pagination, Scrollbar } from "swiper/modules";
+// import { Pagination, Scrollbar } from "swiper/modules";
 
-import { Swiper, SwiperSlide } from "swiper/react";
+// import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
 import "swiper/css";
@@ -92,7 +90,7 @@ export default class TechStack extends React.Component<
           </Frame>
         </div>
 
-        {/* SWIPER JS */}
+        {/* SWIPER JS 
         <Swiper
           // install Swiper modules
           modules={[Pagination, Scrollbar]}
@@ -143,7 +141,7 @@ export default class TechStack extends React.Component<
           <SwiperSlide>Slide 4</SwiperSlide>
           ...
         </Swiper>
-        {/* SWIPER JS END */}
+       SWIPER JS END */}
 
         <div className=" flex justify-center py-20 ">
           <ActiveIndexContext.Consumer>
