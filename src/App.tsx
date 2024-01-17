@@ -18,6 +18,7 @@ import goTo from "./CarouselFunctions/goTo";
 import AboutMe from "./sites/AboutMe";
 import Projects from "./sites/Projects";
 import TechStack from "./sites/TechStack";
+import TechStack2 from "./sites/TechStack2";
 import KnowledgeBase from "./sites/KnowledgeBase";
 
 import ThemePicker from "./sites/ThemePicker";
@@ -26,6 +27,7 @@ import { ActiveIndexContext } from "./helpers/ActiveIndexContext";
 
 import { isMobile } from "react-device-detect";
 import Table from "./components/Table";
+
 interface ExtendedCarousel extends Carousel {
   goTo: (index: number) => void;
 }
@@ -78,6 +80,9 @@ function App(): JSX.Element {
               </Item>
               <Item>
                 <TechStack goTo={goTo.bind(null, carouselRef)} />
+              </Item>
+              <Item>
+                <TechStack2 goTo={goTo.bind(null, carouselRef)} />
               </Item>
               <Item>
                 <KnowledgeBase

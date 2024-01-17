@@ -118,8 +118,8 @@ export default class Navbar extends React.Component<NavbarProps, NavbarState> {
             {/* KNOWLEDGE BASE */}
             <a
               onClick={() => {
-                goTo(3);
-                setActiveIndex(3);
+                goTo(4);
+                setActiveIndex(4);
               }}
               className={`cursor-custom-action text-custom-font hover:opacity-75 ${
                 activeIndex == 3 && isMobile

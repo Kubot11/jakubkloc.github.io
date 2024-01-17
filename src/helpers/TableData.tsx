@@ -432,6 +432,83 @@ export default [
     ],
     details: "-",
   },
+
+  {
+    name: ["Bootstrap", "https://youtu.be/Jyvffr3aCp0"],
+    topics: "CSS - Bootstrap",
+    duration: "2",
+    tasks: ["-", ""],
+    details: "Wykorzystane podczas odbywania stażu.",
+  },
+  {
+    name: ["SCSS", "https://youtu.be/jfMHA8SqUL4"],
+    topics: "CSS - SCSS",
+    duration: "2",
+    tasks: ["-", ""],
+    details:
+      "Wykorzystane podczas odbywania stażu. Wykorzysanie metodologii BEM",
+  },
+  {
+    name: ["PHP", ""],
+    topics: "PHP - phtml",
+    duration: "2",
+    tasks: ["-", ""],
+    details:
+      "Wykorzystane podczas odbywania stażu. Podstawy: deklaracja zmiennych, pobieranie pół z CMS, pętle i instrukcje warunkowe",
+  },
+  {
+    name: ["Wordpress", ""],
+    topics: "CMS - Wordpress",
+    duration: "2",
+    tasks: ["-", ""],
+    details:
+      "Wykorzystane podczas odbywania stażu. Podstawy tworzenia motywu, wtyczka ACF",
+  },
+  {
+    name: ["MJML", "https://documentation.mjml.io/"],
+    topics: "html, mailing, RWD",
+    duration: "2",
+    tasks: ["-", ""],
+    details: "Wykorzystane podczas odbywania stażu.",
+  },
+  {
+    name: ["GitLab", ""],
+    topics: "Git, Gitlab",
+    duration: "3",
+    tasks: ["-", ""],
+    details: "Wykorzystane podczas odbywania stażu.",
+  },
+  {
+    name: ["SwiperJS", "https://swiperjs.com"],
+    topics: "Javascript - SwiperJS",
+    duration: "1",
+    tasks: ["-", ""],
+    details: "Wykorzystane podczas odbywania stażu.",
+  },
+  {
+    name: ["bxSlider", "https://bxslider.com"],
+    topics: "Javascript - bxSlider",
+    duration: "2",
+    tasks: ["-", ""],
+    details: "Wykorzystane podczas odbywania stażu.",
+  },
+
+  {
+    name: ["macOS", ""],
+    topics: "Operating system - macOs",
+    duration: "3",
+    tasks: ["-", ""],
+    details:
+      "podstawowa obsługa, ponadto: OhMyZSH, homebrew, amethyst, Karabiner-Elements",
+  },
+  {
+    name: ["Windows", ""],
+    topics: "Operating system - Windows",
+    duration: "3",
+    tasks: ["-", ""],
+    details:
+      "podstawowa obsługa, ponadto: podstawowa obsługa CMD, rejestru, ustawianie zmiennych środowiskowych, PowerToys",
+  },
 ];
 
 //{ name: ["", ""], topics: "", duration: "", tasks: ["", ""], details: "" },

@@ -88,26 +88,26 @@ export default class AboutMe extends React.Component<
                 Naukę programowania zacząłem w lutym 2022 roku, kiedy obroniłem
                 tytuł inżyniera z kierunku Mechatronika (wtedy już wiedziałem,
                 że zmieniam kierunek swojego życia i chce związać się z
-                programowaniem). Od półtora roku staram się poświęcać
-                programowaniu kilka godzin dziennie od poniedziałku do piątku.
-                Zaczynałem od zera. Poszerzam swoją wiedzę zgodnie z mapą{" "}
+                programowaniem). Przez niecałe dwa lata systematycznie poszerzałem swoją
+wiedzę w zakresie programowania. Korzystałem z mapy {" "}
                 <a
                   className="text-[--color]"
                   href="https://roadmap.sh/frontend"
                 >
                   Frontend Developer
                 </a>
-                , lecz docelowo chce zostać Full Stack Developerem.
+                , docelowo chce zostać Full Stack Developerem. W listopadzie 2023 roku rozpocząłem pracę jako stażysta na stanowisku Front-end developera w agencji
+digitalowej NoMonday.
                 <br />
                 <br />
                 Poza programowaniem hobbystycznie interesuje się muzyką oraz
                 rozwojem osobistym. Jestem osobą szczerą, uważam, że komunikacja
                 jest kluczem do sprawnego działania, zawsze wierzę w siebie,
                 jestem osobą konsekwentną, lecz nie jestem zamknięty na jedną
-                ścieżkę, gdy dostrzeże nowe możliwości.
+                ścieżkę, gdy dostrzegę nowe możliwości.
               </p>
             </div>
-          </Frame>
+        </Frame>
         </div>
 
         <div className="flex justify-center py-20 sm:hidden">

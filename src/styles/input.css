@@ -169,6 +169,7 @@
 /* making the .tooltip span a container for the tooltip text */
 .tooltip {
   position: relative;
+  
 }
 
 /* arrow */
@@ -195,6 +196,8 @@
 .tooltip:hover:after {
   display: block;
   opacity: 1;
+  /* z-index: 99000 !important;
+  background-color: red; */
 }
 
 @media (min-width: 1024px) {
@@ -417,4 +420,38 @@
 
 .no-blue-tap {
   -webkit-tap-highlight-color: transparent;
+}
+
+/* SWIPERJS (TECHNOLOGY SITE) */
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+   display:flex;
+   justify-content: center;
+  /* font-size: 18px; */
+  /* background: #fff; */
+
+  /* Center slide text vertically */
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+}
+
+.swiper-slide img {
+  /* display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; */
+}
+
+.swiper-scrollbar-drag{
+  background-color:#fff;
+}
+
+.swiper-pagination-bullet{
+  background-color:#fff;
 }

@@ -66,7 +66,7 @@ export default class TechStack extends React.Component<
          md:py-5 
          md:text-4xl"
         >
-          Technologie
+          Technologie I 
         </h1>
         <div className="mx-6 sm:mx-0">
           <Frame cornersOffsets={"12px"}>
