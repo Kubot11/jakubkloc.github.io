@@ -96,7 +96,7 @@ wiedzę w zakresie programowania. Korzystałem z mapy {" "}
                 >
                   Frontend Developer
                 </a>
-                , docelowo chce zostać Full Stack Developerem. W listopadzie 2023 roku rozpocząłem pracę jako stażysta na stanowisku Front-end developera w agencji
+                , docelowo chce zostać Full Stack Developerem. W okreśie listopad 2023 - marzec 2024 pracowałem jako stażysta na stanowisku Front-end developera w agencji
 digitalowej NoMonday.
                 <br />
                 <br />

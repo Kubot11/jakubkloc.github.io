@@ -7,6 +7,7 @@ import portfolioPoster from "../assets/portfolio-poster.png";
 import TMDBPoster from "../assets/TMDB-poster.png";
 import tenziesPoster from "../assets/tenzies-poster.png";
 import quizzicalPoster from "../assets/quizzical-poster.png";
+import portfolioMKPoster from "../assets/portfolioMK-poster.png"
 
 interface ProjectsProps {
   goTo: (index: number) => void;
@@ -318,6 +319,41 @@ export default class Projects extends React.Component<
               codeLink="https://github.com/jakubkloc/jakubkloc.github.io"
               demoLink="https://jakubkloc.github.io"
             />
+ {/* PORTFOLIO MK PAGE  */}
+ <Project
+              description={
+                <p className="p-4 text-left text-base sm:max-lg:p-2 sm:max-lg:text-[12px] sm:max-lg:leading-4 ">
+                  Wykorzystałem tu podejście headless CMS. Front-end napisałem w  <a
+                    target="_blank"
+                    className="font-bold text-[--color]"
+                    href="https://sag1v.github.io/react-elastic-carousel/"
+                  >
+                    &nbsp;Astro&nbsp;
+                  </a> (z zastsowaniem możliwości tej technologii takich jak: SSR, smooth transition API, routing, Astro Islands). Napisałem fukncje asynchroniczne fetchujące na żadanie klienta zawartość podstron z <a
+                    target="_blank"
+                    className="font-bold text-[--color]"
+                    href="https://astro.build/"
+                  >
+                    &nbsp;Wordpressa&nbsp;
+                  </a>. Komunikacja między Wordpressem a Astro odbywa się za pomocą zapytań <a
+                    target="_blank"
+                    className="font-bold text-[--color]"
+                    href="https://wordpress.org/"
+                  >
+                    &nbsp;GraphQL&nbsp;
+                  </a>. Ostatecznie aby zahostować aplikacje dokonałem jej konteneryzacji w <a
+                    target="_blank"
+                    className="font-bold text-[--color]"
+                    href="https://graphql.org/"
+                  >
+                    &nbsp;Docker&nbsp;
+                  </a>. Wykorzystałem do tego docker-compose, wykorzystując oficjalne obrazy Wordpressa i MySQL oraz Adminera, tworząc włąsny obraz Astro połączyłem te  4 usługi w jednej sieci, używając woluminów do przechowania zmian. 
+                </p>
+              }
+              imgSource={portfolioMKPoster}
+              demoLink="http://majakozlowskaart.com/"
+            />
+
           </div>
         </div>
         <div className="flex justify-center py-20 sm:hidden">

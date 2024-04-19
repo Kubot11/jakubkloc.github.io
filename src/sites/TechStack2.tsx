@@ -10,6 +10,9 @@ import php from "../assets/php-logo.svg";
 import bootstrap from "../assets/bootstrap-logo.png";
 import wordpress from "../assets/wordpress-logo.png";
 import sass from "../assets/sass-logo.png";
+import astroDark from "../assets/astro-logo-dark.png"
+import astro from '../assets/astro-logo.png'
+import docker from "../assets/docker-logo.png"
 
 import NextBtn from "../components/NextBtn";
 import { ActiveIndexContext } from "../helpers/ActiveIndexContext";
@@ -48,6 +51,9 @@ export default class TechStack2 extends React.Component<
     }
   }
   render(): JSX.Element {
+    const isDarkMode = window.matchMedia(
+      "(prefers-color-scheme: dark)",
+    ).matches;
     const { goTo } = this.props;
     return (
       <div
@@ -102,6 +108,12 @@ export default class TechStack2 extends React.Component<
             image2={macos}
             tooltipText1="Podstawowa obsługa, ponadto: podstawowa obsługa CMD i rejestru, ustawianie zmiennych środowiskowych, PowerToys"
             tooltipText2="Podstawowa obsługa, ponadto: OhMyZSH, homebrew, amethyst, Karabiner-Elements"
+          />
+           <IconsContainer
+            image1={isDarkMode ? astroDark : astro}
+            image2={docker}
+            tooltipText1="Znajmość koncepcji i narzędzi: Astro Islands, smoothTransition API, SSR, routing, Layout"
+            tooltipText2="kontenery, woluminy (utrzymanie stanu), docker-compose, mapowanie portów, komunikacja między kontenerami(docker network), doceker image, dockerfile (tworzenie obrazu), sprawdzanie plików w środowisku kontenera, wykonywanie komend w środowisku kontenera"
           />
         </div>
         <div className=" flex justify-center py-20 ">

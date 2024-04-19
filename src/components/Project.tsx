@@ -3,8 +3,8 @@ import { ReactNode } from "react";
 
 interface ProjectProps {
   imgSource: string;
-  codeLink: string;
-  demoLink: string;
+  codeLink?: string;
+  demoLink?: string;
   description: ReactNode;
 }
 
@@ -44,21 +44,21 @@ export default class Project extends React.Component<ProjectProps> {
         {/* BUTTONS */}
         <div className="flex w-1/2 justify-evenly gap-x-5 sm:w-full">
           {/* CODE */}
-          <a
+          {codeLink && <a
             className="h-max rounded-lg bg-[var(--color)] px-8 py-1.5 text-xs font-bold text-white dark:bg-[#737373]  dark:hover:bg-[#4c4c4c]  sm:max-lg:px-4 sm:max-lg:text-[10px]"
             href={codeLink}
             target="_blank"
           >
             CODE
-          </a>
+          </a> }
           {/* DEMO */}
-          <a
+          {demoLink && <a
             className="h-max rounded-lg bg-[var(--color)] px-8 py-1.5  text-xs font-bold text-white dark:bg-[#737373] dark:hover:bg-[#4c4c4c]  sm:max-lg:px-4  sm:max-lg:text-[10px]"
             href={demoLink}
             target="_blank"
           >
             DEMO
-          </a>
+          </a>}
         </div>
       </div>
     );

@@ -351,7 +351,7 @@ export default [
       "How To Hide API Keys Using Netlify",
       "https://youtu.be/m2Dr4L_Ab14",
     ],
-    topics: "security - serverless functions",
+    topics: "cybersecurity - serverless functions",
     duration: "1",
     tasks: [
       "wykorzystane w projekcie",
@@ -508,6 +508,98 @@ export default [
     tasks: ["-", ""],
     details:
       "podstawowa obsługa, ponadto: podstawowa obsługa CMD, rejestru, ustawianie zmiennych środowiskowych, PowerToys",
+  },
+  {
+    name: ["Docker get started", "https://docs.docker.com/get-started/"],
+    topics: "Docker",
+    duration: "3",
+    tasks: [
+      "wykorzystane w projekcie",
+      "http://majakozlowskaart.com/ i podczas odbywania stażu",
+    ],
+    details: "-",
+  },
+  {
+    name: [
+      "Networking Fundamentals",
+      " https://www.youtube.com/watch?v=bj-Yfakjllc&list=PLIFyRwBY_4bRLmKfP1KnZA6rZbRHtxmXi",
+    ],
+    topics: "networking - OSI model, protocols etc.",
+    duration: "3",
+    tasks: [
+      "notatka",
+      "https://drive.google.com/file/d/1FM8KI8EwXqT8ro3P-UoDZpAvjf69LXK6/view?usp=sharing",
+    ],
+    details: "-",
+  },
+  {
+    name: ["wprowadzenie do bezpieczeństwa aplikacji WWW SekurakTV", ""],
+    topics: "cybersecurity - tesowanie aplikacji pod kątem bezpieczeńśtwa",
+    duration: "3",
+    tasks: [
+      "notatka",
+      "https://drive.google.com/file/d/1zZogLay3lE9UIL9Ru_rX3hADPvvbiClO/view?usp=sharing",
+    ],
+    details: "-",
+  },
+  {
+    name: [
+      "headless CMS (Astro + Wordpress, GraphQL) I",
+      "https://wpengine.com/builders/building-headless-wordpress-site-astro/",
+    ],
+    topics: "headless CMS, Astro, Wordpress, GraphQL",
+    duration: "1",
+    tasks: ["wykorzystane w projekcie", "http://majakozlowskaart.com/"],
+    details: "-",
+  },
+  {
+    name: [
+      "headless CMS (Astro + Wordpress, GraphQL) II",
+      "https://blog.openreplay.com/building-an-astro-website-with-wordpress-as-a-headless-cms/",
+    ],
+    topics: "headless CMS, Astro, Wordpress, GraphQL",
+    duration: "1",
+    tasks: ["wykorzystane w projekcie", "http://majakozlowskaart.com/"],
+    details: "-",
+  },
+  {
+    name: [
+      "Jaka jest NAJLEPSZA struktura folderów w React?",
+      "https://www.youtube.com/watch?v=bMMBAbuwJ1E",
+    ],
+    topics: "React - struktura folderów",
+    duration: "1",
+    tasks: [
+      "notatka",
+      "https://drive.google.com/file/d/15MNgZLhwO2POivnxNk2SOz62YehEmpja/view?usp=sharing",
+    ],
+    details: "-",
+  },
+  {
+    name: [
+      "React - kurs podstaw w 2h krok po kroku!",
+      "https://www.youtube.com/watch?v=ETwdg4lvUUM",
+    ],
+    topics: "React",
+    duration: "2",
+    tasks: [
+      "notatka",
+      "https://drive.google.com/file/d/1rvj3nlvrkDSgckWboQL6XuyEJLe1K3Ar/view?usp=sharing",
+    ],
+    details: "",
+  },
+  {
+    name: [
+      "DLACZEGO testujemy kod? Narzędzia do tworzenia testów w JavaScript - Jest, Playwright",
+      "https://youtu.be/3MbLVNeIchg",
+    ],
+    topics: "testowanie",
+    duration: "1",
+    tasks: [
+      "notatka",
+      "https://drive.google.com/file/d/1fORAQqY2NAanI5aclEM3-sukGcvhKaC-/view?usp=sharing",
+    ],
+    details: "-",
   },
 ];
 
