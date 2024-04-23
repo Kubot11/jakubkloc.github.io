@@ -42,6 +42,14 @@ function App(): JSX.Element {
   useEffect(() => {
     if (!isMobile) {
       const handleWheel = (e: WheelEvent) => {
+        const target = e.target as HTMLElement;
+        const isTargetTable = target.closest(".table-container") !== null;
+        const isLastSlide = activeIndex === 4;
+
+        if (isTargetTable && isLastSlide) {
+          return;
+        }
+
         if (!isScrolling) {
           setIsScrolling(true);
           let nextIndex = activeIndex;
