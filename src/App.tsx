@@ -44,9 +44,9 @@ function App(): JSX.Element {
       const handleWheel = (e: WheelEvent) => {
         const target = e.target as HTMLElement;
         const isTargetTable = target.closest(".table-container") !== null;
-        const isLastSlide = activeIndex === 4;
+        const isProjectDescription = target.closest(".text-overlay") !== null;
 
-        if (isTargetTable && isLastSlide) {
+        if (isTargetTable || isProjectDescription) {
           return;
         }
 
