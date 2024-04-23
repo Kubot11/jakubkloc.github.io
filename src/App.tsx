@@ -1,5 +1,5 @@
 import React from "react";
-
+import { useEffect } from "react";
 import LoadingBar from "./components/LoadingBar";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -7,9 +7,7 @@ import ContactIcons from "./components/ContactIcons";
 import backArrow from "./assets/back-arrow.png";
 
 // React-Elastic-Carousel
-import Carousel, {
-  type RenderArrowProps,
-} from "@itseasy21/react-elastic-carousel";
+import Carousel from "@itseasy21/react-elastic-carousel";
 import Item from "./components/Item";
 import myArrow from "./CarouselFunctions/myArrow";
 import goTo from "./CarouselFunctions/goTo";
@@ -39,6 +37,35 @@ function App(): JSX.Element {
 
   const [activeIndex, setActiveIndex] = React.useState(0);
   const [mobileTable, setMobileTable] = React.useState(false);
+  const [isScrolling, setIsScrolling] = React.useState(false);
+
+  useEffect(() => {
+    if (!isMobile) {
+      const handleWheel = (e: WheelEvent) => {
+        if (!isScrolling) {
+          setIsScrolling(true);
+          let nextIndex = activeIndex;
+
+          if (e.deltaY < 0 && activeIndex > 0) {
+            nextIndex = (activeIndex - 1 + 5) % 5;
+          } else if (e.deltaY > 0 && activeIndex < 4) {
+            nextIndex = (activeIndex + 1) % 5;
+          }
+          if (carouselRef.current && nextIndex !== activeIndex) {
+            carouselRef.current.goTo(nextIndex);
+            setActiveIndex(nextIndex);
+          }
+          setTimeout(() => setIsScrolling(false), 500);
+        }
+      };
+
+      window.addEventListener("wheel", handleWheel, { passive: false });
+
+      return () => {
+        window.removeEventListener("wheel", handleWheel);
+      };
+    }
+  }, [activeIndex, isScrolling, isMobile]);
 
   return (
     <div>
@@ -67,7 +94,9 @@ function App(): JSX.Element {
               itemsToShow={1}
               isRTL={false}
               renderPagination={() => <></>}
-              renderArrow={(props: RenderArrowProps) => myArrow(props)}
+              renderArrow={(props: any) =>
+                myArrow({ ...props, setActiveIndex })
+              }
               enableMouseSwipe={false}
               ref={carouselRef}
             >

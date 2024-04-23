@@ -85,10 +85,7 @@ export default class AboutMe extends React.Component<
               sm:w-auto  sm:max-w-none`}
             >
               <p className="p-5  text-lg sm:max-md:p-1 sm:max-md:text-[13px] md:max-lg:p-1 md:max-lg:text-[10px] lg:max-xl:p-1 lg:max-xl:text-[13px] xl:max-2xl:p-1.5  ">
-                Naukę programowania zacząłem w lutym 2022 roku, kiedy obroniłem
-                tytuł inżyniera z kierunku Mechatronika (wtedy już wiedziałem,
-                że zmieniam kierunek swojego życia i chce związać się z
-                programowaniem). Przez niecałe dwa lata systematycznie poszerzałem swoją
+               Przez ostatnie lata systematycznie poszerzałem swoją
 wiedzę w zakresie programowania. Korzystałem z mapy {" "}
                 <a
                   className="text-[--color]"
@@ -96,7 +93,7 @@ wiedzę w zakresie programowania. Korzystałem z mapy {" "}
                 >
                   Frontend Developer
                 </a>
-                , docelowo chce zostać Full Stack Developerem. W okreśie listopad 2023 - marzec 2024 pracowałem jako stażysta na stanowisku Front-end developera w agencji
+                , docelowo chce zostać Full Stack Developerem. W okreśie listopad 2023 - marzec 2024 pracowałem na stanowisku Front-end developera w agencji
 digitalowej NoMonday.
                 <br />
                 <br />

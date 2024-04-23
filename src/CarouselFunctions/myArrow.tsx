@@ -6,14 +6,28 @@ interface MyArrowProps {
   type: string;
   onClick: () => void;
   isEdge: boolean;
+  activeIndex: number;
+  setActiveIndex: Function;
 }
 
 export default function myArrow({
   type,
   onClick,
   isEdge,
+  setActiveIndex,
 }: MyArrowProps): JSX.Element {
-  // no prev/next buttons on small screens
+  function handleClick(direction: string) {
+    setActiveIndex((prevIndex: number) => {
+      if (direction === "prev") {
+        return prevIndex > 0 ? prevIndex - 1 : prevIndex;
+      } else if (direction === "next") {
+        return prevIndex < 4 ? prevIndex + 1 : prevIndex;
+      }
+      return prevIndex; 
+    });
+    onClick();
+  }
+
   if (window.innerWidth < 640) {
     return <></>;
   }
@@ -22,7 +36,7 @@ export default function myArrow({
   if (type === consts.PREV) {
     return (
       <div
-        onClick={onClick}
+        onClick={() => handleClick("prev")}
         className={`button-container absolute left-0 z-10 cursor-custom-action sm:top-[48%]  sm:h-16  sm:w-16 md:top-[40%]  md:h-32 
          md:w-24 ${isEdge ? "hidden" : ""}`}
       >
@@ -36,7 +50,7 @@ export default function myArrow({
     }
     return (
       <button
-        onClick={onClick}
+        onClick={() => handleClick("next")}
         className={`next-btn-animation button-container absolute right-0 z-10 cursor-custom-action  sm:top-[48%]  sm:h-16 sm:w-16  md:top-[40%] md:h-32
         md:w-24
         ${isEdge ? "hidden" : ""}`}
