@@ -601,6 +601,7 @@ export default [
     ],
     details: "-",
   },
+  { name: ["Stylowanie w React - CSS Modules", "https://youtu.be/u9lbgX8w9_g"], topics: "CSS - CSS Modules", duration: "1", tasks: ["notatka", "https://drive.google.com/file/d/1aSRvof2Rqmo2PDhhsvX8UI1BcKGuplEp/view?usp=sharing"], details: "-" },
 ];
 
 //{ name: ["", ""], topics: "", duration: "", tasks: ["", ""], details: "" },
